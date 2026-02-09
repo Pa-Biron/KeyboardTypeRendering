@@ -1,9 +1,10 @@
 import { useState } from "react";
-import { Button, KeyboardTypeOptions, Text, TextInput, View } from "react-native";
+import { Button, KeyboardTypeOptions, TextInput, View } from "react-native";
 
 export default function Index() {
   const [text, setText] = useState("");
-  const [keyboardType, setKeyboardType] = useState<KeyboardTypeOptions>("default");
+  const [keyboardType, setKeyboardType] =
+    useState<KeyboardTypeOptions>("default");
 
   const handleChangeKeyboardType = () => {
     setKeyboardType(keyboardType === "default" ? "numeric" : "default");
@@ -16,7 +17,12 @@ export default function Index() {
         alignItems: "center",
       }}
     >
-      <TextInput placeholder="Add text." value={text} onChangeText={setText} keyboardType={keyboardType} />
+      <TextInput
+        placeholder="Add text."
+        value={text}
+        onChangeText={setText}
+        keyboardType={keyboardType}
+      />
 
       <Button title="Change keyboard type" onPress={handleChangeKeyboardType} />
     </View>
